@@ -1,0 +1,12 @@
+literature/
+
+.DS_Store
+
+*.log
+*.aux
+*.toc
+*.out
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
