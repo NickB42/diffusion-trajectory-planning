@@ -46,15 +46,14 @@
 \subsection{Goal conditioning and planning objectives}
 \begin{itemize}
     \item Inpainting: fixing the current state and specified goals during iterative denoising
-    \item Reward guidance using a separately learned return predictor; modifying the denoising distribution
+    \item Reward guidance using a separately learned return predictor
     \item Planning as inference: $\widetilde p_\theta(\tau)\propto p_\theta(\tau)h(\tau)$~\cite{levine2018inference}
     \item Maze2D navigation with start-goal inpainting, in contrast to reward-guided locomotion
 \end{itemize}
 \subsection{Constraints and limitations}
 \begin{itemize}
-    \item Obstacle avoidance learned from trajectory data versus explicit test-time cost guidance
-    \item Inpainting of specified values versus soft guidance of trajectory costs
-    \item No general guarantees for collision avoidance or consistency with system dynamics
+    \item Limitations of learned obstacle avoidance and the potential role of explicit cost guidance
+    \item Lack of guarantees for collision avoidance and consistency with system dynamics
 \end{itemize}
 
 \section{From Diffuser to diffusion policies}
@@ -73,15 +72,15 @@
 \subsection{Comparison of the three methods}
 \begin{itemize}
     \item Generated variables, conditioning inputs, training data, and inference procedures
-    \item Planning versus policy learning; use of receding-horizon execution in Diffuser and Diffusion Policy
+    \item Differences between trajectory planning and policy learning
     \item Flexibility, multimodality, runtime, and applicability to the 2D experiment
 \end{itemize}
 
 \section{Experimental study: 2D trajectory planning}
 \subsection{Environment and training data}
 \begin{itemize}
-    \item Point robot with single-integrator dynamics, static obstacles, and start-goal queries
-    \item Diverse, collision-free demonstration trajectories; disjoint train/validation/test queries
+    \item Point robot with simple velocity-based motion, static obstacles, and start-goal queries
+    \item Diverse, collision-free demonstration trajectories; separate train/validation/test queries
     \item Comparison with the CMA-ES seminar on a common benchmark
 \end{itemize}
 \subsection{Methods and evaluation}
@@ -92,7 +91,7 @@
 \end{itemize}
 \subsection{Ablations and failure analysis}
 \begin{itemize}
-    \item Main ablation: contribution of obstacle-cost guidance beyond the learned trajectory prior
+    \item Ablation study: impact of additional obstacle-cost guidance
     \item Role of training-data coverage; representative collision and dynamics failures
     \item Limits of conclusions drawn from a simple 2D setting
 \end{itemize}
